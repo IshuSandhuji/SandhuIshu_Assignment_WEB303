@@ -1,4 +1,4 @@
-// script.js
+
 $(document).ready(function () {
     const $usernameInput = $('#username');
     const $passwordInput = $('#password');
@@ -35,18 +35,16 @@ $(document).ready(function () {
       $submitButton.prop('disabled', !checkFormValidity());
     };
   
-    // Event listeners for form inputs
+
     $usernameInput.on('input', updateSubmitButton);
     $passwordInput.on('input', updateSubmitButton);
     $confirmPasswordInput.on('input', updateSubmitButton);
     $termsCheckbox.on('change', updateSubmitButton);
-    $countrySelect.on('change', updateSubmitButton);
+    $countrySelect.on('change', updateSubmitButton); 
   
-    // Event listener for form submission
     $registrationForm.on('submit', function (event) {
       event.preventDefault();
   
-      // Display welcome message
       $welcomeMessage.html(`Welcome ${$usernameInput.val()}! The country code you selected is ${$countrySelect.val()}`);
       $welcomeMessage.show();
     });
